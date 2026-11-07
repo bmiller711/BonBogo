@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deal Tracker | Jon Bon Bogo the Bogo Guy</title>
+<meta name="description" content="Local and national deals posted by readers, with photos, comments, and still-on-the-shelf votes.">
+<meta name="theme-color" content="#0b0710">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jon Bon Bogo the Bogo Guy">
+<meta property="og:title" content="Deal Tracker | Jon Bon Bogo the Bogo Guy">
+<meta property="og:description" content="Local and national deals posted by readers, with photos, comments, and still-on-the-shelf votes.">
+<meta property="og:url" content="https://jonbonbogothebogoguy.com/deals">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;700&family=Metal+Mania&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="/" aria-label="Jon Bon Bogo the Bogo Guy, home">
+<span class="logo-name">Jon Bon Bogo</span>
+<span class="logo-tag">The Bogo Guy</span>
+</a>
+<nav class="site-nav" aria-label="Main">
+<a href="/">Home</a>
+<a href="/deals" aria-current="page">Deal Tracker</a>
+<a href="/articles">Articles</a>
+<a href="/card-offers">Card Offers</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero grid-bg">
+<div class="wrap">
+<h1 class="page-title">The Deal Tracker</h1>
+<p class="lead" style="font-size:21px">Local shelves and national sales, reported by people who actually walked in. Spot a deal, snap a photo of the tag, and add it. If a deal is gone when you get there, say so.</p>
+</div>
+</section>
+
+<section class="wrap section" style="padding-top:56px;padding-bottom:96px">
+<div class="tracker">
+
+<div class="tracker-list">
+<div class="tracker-tools">
+<div class="tabs" role="group" aria-label="Filter deals">
+<button class="tab" type="button" data-scope="all" aria-pressed="true">All deals</button>
+<button class="tab" type="button" data-scope="local" aria-pressed="false">Local</button>
+<button class="tab" type="button" data-scope="national" aria-pressed="false">National</button>
+</div>
+<div class="field search">
+<label class="sr-only" for="deal-search">Search deals</label>
+<input id="deal-search" type="search" placeholder="Search item, store or town" autocomplete="off">
+</div>
+</div>
+<div class="deal-list" id="deal-list" aria-live="polite"><p class="loading">Loading deals&hellip;</p></div>
+<p class="small muted" style="margin:0">Deals are reports from readers, not guarantees. Prices, limits and availability can change by the minute and by the store. Deals drop off the list after 45 days, or after their end date.</p>
+</div>
+
+<form class="panel-form sticky" id="deal-form" novalidate>
+<div style="display:flex;flex-direction:column;gap:4px">
+<h2>Add a deal</h2>
+<span class="muted" style="font-size:16px">Saw it? Post it. Takes a minute.</span>
+</div>
+<div class="field">
+<label for="f-item">What's the deal on?</label>
+<input id="f-item" name="item" type="text" maxlength="80" required placeholder="Hummus">
+</div>
+<div class="field">
+<label for="f-type">Type of deal</label>
+<select id="f-type" name="dealType">
+<option value="BOGO">BOGO (buy one, get one)</option>
+<option value="BUY X GET Y">Buy some, get some free</option>
+<option value="% OFF">Percent off</option>
+<option value="PRICE DROP">Price drop</option>
+<option value="COUPON">Coupon or code</option>
+<option value="CLEARANCE">Clearance</option>
+<option value="OTHER">Something else</option>
+</select>
+</div>
+<div class="field">
+<label for="f-details">Deal details (optional)</label>
+<input id="f-details" name="details" type="text" maxlength="120" placeholder="Buy 2, get 3 free. Limit 4.">
+</div>
+<div class="field">
+<label for="f-store">Store</label>
+<input id="f-store" name="store" type="text" maxlength="80" required placeholder="Safeway">
+</div>
+<div class="field">
+<label for="f-scope">Where is it good?</label>
+<select id="f-scope" name="scope">
+<option value="local">Local: one store or area</option>
+<option value="national">National: online or chain-wide</option>
+</select>
+</div>
+<div class="field" id="place-field">
+<label for="f-place">Street, city, state</label>
+<input id="f-place" name="place" type="text" maxlength="120" placeholder="Langston Blvd, Arlington, VA">
+</div>
+<div class="field">
+<label for="f-until">Good through (optional)</label>
+<input id="f-until" name="goodThrough" type="date">
+</div>
+<div class="field">
+<label for="f-photo">Photo of the tag or coupon (optional)</label>
+<input id="f-photo" type="file" accept="image/*">
+<div id="photo-preview" hidden style="display:flex;flex-direction:column;gap:8px;align-items:flex-start">
+<img class="photo-preview" alt="Preview of the photo you chose">
+<button class="btn btn-sm btn-outline-pink" type="button" id="photo-remove">Remove photo</button>
+</div>
+<span class="hint">Make sure the price and deal terms are readable. Please keep faces and personal info out of the shot. Photos appear after a quick review.</span>
+</div>
+<div class="field">
+<label for="f-who">Your name or nickname (optional)</label>
+<input id="f-who" name="who" type="text" maxlength="40" placeholder="Coupon Queen">
+</div>
+<div class="turnstile-slot" id="deal-ts"></div>
+<button class="btn btn-pink btn-lg shadow-cyan" type="submit">Add deal</button>
+<p class="form-msg" role="status"></p>
+</form>
+
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<span><strong>Disclosure.</strong> People who share referral links on this site may earn rewards when you apply. Offers and terms change, so check the issuer's or retailer's own site before you decide. Deals posted by readers are reports, not guarantees. Nothing here is financial advice.</span>
+<nav class="footer-links" aria-label="Footer">
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms</a>
+<a href="#" data-contact-email data-keep-text data-if-contact hidden>Contact</a>
+</nav>
+<span class="copyright">&copy; Jon Bon Bogo the Bogo Guy &middot; jonbonbogothebogoguy.com</span>
+</div>
+</footer>
+<script type="module" src="/js/site.js"></script>
+<script type="module" src="/js/deals.js"></script>
+</body>
+</html>

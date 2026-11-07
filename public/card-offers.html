@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Offers | Jon Bon Bogo the Bogo Guy</title>
+<meta name="description" content="Guests share the credit card they just got: why they chose it, the annual fee, the benefits, and how to request a referral.">
+<meta name="theme-color" content="#0b0710">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jon Bon Bogo the Bogo Guy">
+<meta property="og:title" content="Card Offers | Jon Bon Bogo the Bogo Guy">
+<meta property="og:description" content="Guests share the credit card they just got: why they chose it, the annual fee, the benefits, and how to request a referral.">
+<meta property="og:url" content="https://jonbonbogothebogoguy.com/card-offers">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;700&family=Metal+Mania&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="/" aria-label="Jon Bon Bogo the Bogo Guy, home">
+<span class="logo-name">Jon Bon Bogo</span>
+<span class="logo-tag">The Bogo Guy</span>
+</a>
+<nav class="site-nav" aria-label="Main">
+<a href="/">Home</a>
+<a href="/deals">Deal Tracker</a>
+<a href="/articles">Articles</a>
+<a href="/card-offers" aria-current="page">Card Offers</a>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero gold grid-bg gold">
+<div class="wrap">
+<h1 class="page-title">Card Offers</h1>
+<p class="lead" style="font-size:21px">Guests write about the card they just got: why they picked it, what it does for them, and you can ask them for a referral link if you'd like one.</p>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:48px">
+<div class="notice">
+<strong>Read this first</strong>
+<p>Guests may earn rewards if you apply through a referral link they send you. You can request one, and they choose whether to share it. These are personal experiences, not recommendations for you. Approval, offers and terms vary, so check the issuer's own site for current details before you apply.</p>
+</div>
+</section>
+
+<section class="wrap" style="padding-top:48px">
+<div class="posts" id="posts"><p class="loading">Loading posts&hellip;</p></div>
+</section>
+
+<section class="wrap section" id="share" style="padding-bottom:96px">
+<div class="split">
+<div class="intro">
+<h2 class="h-section" style="font-size:clamp(36px,5vw,56px)">Share your card</h2>
+<p class="lead" style="font-size:19px">Got a new card? Tell readers about it in your own words. Jon reads every post before it goes up.</p>
+<ul>
+<li>Say why you chose it, and be honest about the downsides.</li>
+<li>Check the issuer's page for the current offer and terms.</li>
+<li>Readers can request a referral through the site. You get their request by email and choose who, if anyone, gets your link.</li>
+</ul>
+</div>
+<form class="panel-form gold" id="post-form" novalidate style="flex:1 1 460px">
+<div class="field">
+<label for="g-name">Your name, as shown on the post</label>
+<input id="g-name" name="guestName" type="text" maxlength="40" required>
+</div>
+<div class="row">
+<div class="field"><label for="g-card">Card name</label><input id="g-card" name="cardName" type="text" maxlength="80" required></div>
+<div class="field"><label for="g-issuer">Issuer</label><input id="g-issuer" name="issuer" type="text" maxlength="60" required></div>
+</div>
+<div class="row">
+<div class="field"><label for="g-fee">Annual fee</label><input id="g-fee" name="annualFee" type="text" maxlength="60" required placeholder="$0, or $95 a year"></div>
+<div class="field"><label for="g-feenote">Waived? Worth it for you?</label><input id="g-feenote" name="feeNote" type="text" maxlength="200" placeholder="Waived the first year"></div>
+</div>
+<div class="field">
+<label for="g-why">Why did you choose it?</label>
+<textarea id="g-why" name="why" rows="4" maxlength="2000" required></textarea>
+</div>
+<div class="field">
+<label for="g-perks">What benefits do you see? (one per line)</label>
+<textarea id="g-perks" name="perks" rows="4" maxlength="1000"></textarea>
+</div>
+<div class="field">
+<label for="g-email">Your contact email (private, never shown on the site)</label>
+<input id="g-email" name="contactEmail" type="email" maxlength="200" autocomplete="email" required>
+<span class="hint">Referral requests from readers are sent here.</span>
+</div>
+<div class="check">
+<input id="g-agree" name="agree" type="checkbox" required>
+<label for="g-agree">I understand that readers can request a referral from me through the site. If I share a link, I'll tell them I may earn rewards from it.</label>
+</div>
+<div class="turnstile-slot" id="post-ts"></div>
+<button class="btn btn-gold btn-lg shadow-pink" type="submit">Send to Jon for review</button>
+<p class="form-msg" role="status"></p>
+</form>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="wrap">
+<span><strong>Disclosure.</strong> People who share referral links on this site may earn rewards when you apply. Offers and terms change, so check the issuer's or retailer's own site before you decide. Deals posted by readers are reports, not guarantees. Nothing here is financial advice.</span>
+<nav class="footer-links" aria-label="Footer">
+<a href="/privacy">Privacy</a>
+<a href="/terms">Terms</a>
+<a href="#" data-contact-email data-keep-text data-if-contact hidden>Contact</a>
+</nav>
+<span class="copyright">&copy; Jon Bon Bogo the Bogo Guy &middot; jonbonbogothebogoguy.com</span>
+</div>
+</footer>
+<script type="module" src="/js/site.js"></script>
+<script type="module" src="/js/cards.js"></script>
+</body>
+</html>

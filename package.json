@@ -1,0 +1,14 @@
+{
+  "name": "jonbonbogo-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Jon Bon Bogo the Bogo Guy - retail deals and credit card offers",
+  "scripts": {
+    "dev": "wrangler pages dev public --d1 DB --r2 PHOTOS --port 8788",
+    "db:local": "wrangler d1 execute jonbonbogo-db --local --file=schema.sql",
+    "db:remote": "wrangler d1 execute jonbonbogo-db --remote --file=schema.sql"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.2"
+  }
+}

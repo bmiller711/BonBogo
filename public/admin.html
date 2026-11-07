@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | Jon Bon Bogo the Bogo Guy</title>
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;700&family=Metal+Mania&display=swap">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<header class="site-header">
+<div class="wrap">
+<a class="logo" href="/">
+<span class="logo-name">Jon Bon Bogo</span>
+<span class="logo-tag">Admin</span>
+</a>
+<button class="btn btn-sm btn-outline" type="button" id="logout" hidden>Sign out</button>
+</div>
+</header>
+
+<main id="main" class="wrap" style="padding-bottom:88px">
+
+<section id="login-view" hidden style="max-width:460px;padding-top:56px">
+<form class="panel-form" id="login-form" novalidate>
+<h1 style="margin:0;font-family:var(--cond);font-weight:800;text-transform:uppercase;font-size:40px;line-height:1">Sign in</h1>
+<div class="field">
+<label for="password">Admin password</label>
+<input id="password" name="password" type="password" autocomplete="current-password" required>
+</div>
+<button class="btn btn-pink btn-lg" type="submit">Sign in</button>
+<p class="form-msg" role="status"></p>
+</form>
+</section>
+
+<section id="dash" hidden>
+<div class="admin-top">
+<h1 class="page-title" style="font-size:clamp(36px,5vw,56px)">Dashboard</h1>
+<button class="btn btn-sm btn-outline-gold" type="button" id="refresh">Refresh</button>
+</div>
+<nav class="admin-tabs" aria-label="Admin sections">
+<button class="tab" type="button" data-tab="review" aria-pressed="true">Review<span class="count" id="review-count" hidden></span></button>
+<button class="tab" type="button" data-tab="deals" aria-pressed="false">Deals</button>
+<button class="tab" type="button" data-tab="articles" aria-pressed="false">Articles</button>
+<button class="tab" type="button" data-tab="posts" aria-pressed="false">Card posts</button>
+<button class="tab" type="button" data-tab="requests" aria-pressed="false">Referral requests</button>
+<button class="tab" type="button" data-tab="email" aria-pressed="false">Email list</button>
+<button class="tab" type="button" data-tab="setup" aria-pressed="false">Setup</button>
+</nav>
+<p class="form-msg" id="dash-msg" role="status"></p>
+<div id="panel"></div>
+</section>
+
+</main>
+<script type="module" src="/js/admin.js"></script>
+</body>
+</html>
